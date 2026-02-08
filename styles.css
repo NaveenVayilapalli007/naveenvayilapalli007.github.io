@@ -10,7 +10,7 @@
   --muted: black;
 
   --card-bg: #ffffff;
-  --footer-bg: black;
+  --footer-bg:black;
 
   /* Visual refinement tokens */
   --border: rgba(0, 0, 0, 0.08);
@@ -50,22 +50,15 @@ body {
   color: var(--text);
   line-height: 1.6;
   transition: background 0.3s, color 0.3s;
-
-  /* Prevent overlap with fixed headers */
-  padding-top: 96px;
 }
 
 
 /* =========================
-   DATETIME BAR (LOCKED)
+   DATETIME BAR
 ========================= */
 
 #datetime-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-
   background: var(--card-bg);
   color: var(--muted);
   text-align: center;
@@ -73,23 +66,19 @@ body {
   font-size: 0.99rem;
   font-weight: 500;
   letter-spacing: 0.5px;
-
   border-bottom: 1px solid var(--border);
-  z-index: 1100;
 }
 
 
 /* =========================
-   NAVBAR (LOCKED BELOW TIME)
+   NAVBAR
 ========================= */
 
 .navbar {
-  position: fixed;
-  top: 32px; /* Height of datetime bar */
-
-  width: 100%;
   background: var(--card-bg);
   box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
   z-index: 1000;
 }
 
@@ -337,9 +326,140 @@ body {
   }
 }
 
-/* Mobile */
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================
+   MOBILE FIXES (UPDATED)
+   Scope: <= 640px ONLY
+   Desktop untouched
+========================= */
+
 @media (max-width: 640px) {
+
+  /* ---------- Navbar ---------- */
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+
+  /* ---------- DateTime Bar ---------- */
+
+  #datetime-bar {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.5rem;
+    line-height: 1.4;
+  }
+
+
+  /* ---------- Hero Section ---------- */
+
+  .hero {
+    padding: 4rem 1.2rem;   /* Reduced vertical space */
+  }
+
+  .hero h2 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+  }
+
+  .hero h2 span {
+    display: block;         /* Forces clean name break */
+    margin-top: 0.3rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+  }
+
+
+  /* ---------- Hero Buttons ---------- */
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+  }
+
+  .btn,
+  .btn-outline {
+    width: 85%;
+    max-width: 260px;
+    text-align: center;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+
+
+  /* ---------- Sections ---------- */
+
+  .section {
+    padding: 3rem 1.2rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+
+  /* ---------- Skills ---------- */
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-card {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+
+  /* ---------- Projects ---------- */
+
   .project-grid {
     grid-template-columns: 1fr;
   }
+
+  .project-card {
+    padding: 1.2rem;
+  }
+
 }
+
