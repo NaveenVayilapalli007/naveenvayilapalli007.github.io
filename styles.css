@@ -10,7 +10,7 @@
   --muted: black;
 
   --card-bg: #ffffff;
-  --footer-bg:black;
+  --footer-bg: black;
 
   /* Visual refinement tokens */
   --border: rgba(0, 0, 0, 0.08);
@@ -50,15 +50,22 @@ body {
   color: var(--text);
   line-height: 1.6;
   transition: background 0.3s, color 0.3s;
+
+  /* Prevent overlap with fixed headers */
+  padding-top: 96px;
 }
 
 
 /* =========================
-   DATETIME BAR
+   DATETIME BAR (LOCKED)
 ========================= */
 
 #datetime-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+
   background: var(--card-bg);
   color: var(--muted);
   text-align: center;
@@ -66,19 +73,23 @@ body {
   font-size: 0.99rem;
   font-weight: 500;
   letter-spacing: 0.5px;
+
   border-bottom: 1px solid var(--border);
+  z-index: 1100;
 }
 
 
 /* =========================
-   NAVBAR
+   NAVBAR (LOCKED BELOW TIME)
 ========================= */
 
 .navbar {
+  position: fixed;
+  top: 32px; /* Height of datetime bar */
+
+  width: 100%;
   background: var(--card-bg);
   box-shadow: var(--shadow);
-  position: sticky;
-  top: 0;
   z-index: 1000;
 }
 
