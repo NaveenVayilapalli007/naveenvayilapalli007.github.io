@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naveen Vayilapalli | Portfolio</title>
+  <meta name="description" content="Professional portfolio website for Your Name — Full Stack Developer & Cloud Enthusiast.">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <h1 class="logo"><a href="#">Naveen Vayilapalli</a></h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content fade-in">
+      <h2>Hello, I'm <span>Naveen Vayilapalli</span></h2>
+      <p>Python Developer / Data Analyst / Data Engineer</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="./Naveen Vayilapalli Data Engineer.pdf" class="btn-outline" download>📄 Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section fade-in">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I’m <strong>Naveen Vayilapalli</strong>, a passionate and self-driven technologist with a deep interest in building intelligent, data-driven, and cloud-native solutions. I’m continuously evolving as a Python Developer, Cloud Engineer, and Data Enthusiast, focusing on creating impactful, production-grade applications that merge development, data, and automation.
+      </p>
+
+      <p>
+        My technical journey has been shaped by hands-on experience with tools and frameworks such as <strong>FastAPI, MySQL,PostgreSQL, Terraform, AWS, and Power BI</strong> — allowing me to work across both backend development and data analytics pipelines. I believe in writing clean, efficient, and scalable code while adhering to best practices in version control, testing, and deployment.
+      </p>
+      
+      <p>
+        In parallel,I also have a growing interest in <strong> DevOps automation, CI/CD pipelines, and Infrastructure as Code </strong>, enabling seamless integration between development and deployment workflows.
+      </p>
+      
+      <p>
+        I take pride in being a consistent learner who thrives on challenges. My current goal is to master the intersection of data engineering, cloud architecture, and AI, contributing to real-world projects that deliver measurable value and innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section fade-in">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Pyspark</div>
+        <div class="skill-card">AWS</div>
+        <div class="skill-card">Power BI</div>
+        <div class="skill-card">MySQL</div>
+        <div class="skill-card">PostgreSQL</div>
+        <div class="skill-card">MongoDB</div>
+        <div class="skill-card">Numpy </div>
+        <div class="skill-card">Pandas </div>
+        <div class="skill-card">Git & GitHub</div>
+        <div class="skill-card">Terraform</div>
+        <div class="skill-card">FastAPI</div>
+        <div class="skill-card">Data Modelling</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section fade-in">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Pyspark-Airflow ETL Pipeline</h3>
+          <p>Production-grade PySpark ETL pipeline using Airflow TaskFlow API and Delta Lake <br> (Bronze–Silver–Gold architecture)</p>
+          <a 
+            href="https://github.com/NaveenVayilapalli007/pyspark-airflow-etl-pipeline" target="_blank"
+            rel="noopener noreferrer"
+            >🔗 View on GitHub
+          </a>
+        </div>
+
+        <div class="project-card">
+          <h3>AWS Enterprise Platform (Terraform)</h3>
+          <p>
+            Infrastructure-as-Code project provisioning a scalable and secure AWS
+            enterprise platform using Terraform, including networking, compute,
+            storage, and IAM.
+          </p>
+          <a
+            href="https://github.com/NaveenVayilapalli007/terraform-aws-enterprise-platform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🔗 View on GitHub
+          </a>
+        </div>
+
+
+        <!-- <div class="project-card">
+          <h3>Uber Analysis Dashboard – Power BI</h3>
+          <p>
+            Developed an end-to-end Uber analytics dashboard using Power BI and SQL to
+            track KPIs such as total trips, revenue, average distance, cancellation
+            rates, and driver ratings. Enabled drill-down analysis by city, date, and
+            vehicle type, improving decision-making and operational visibility.
+          </p>
+          <a
+            href="https://github.com/NaveenVayilapalli007/uber-powerbi-analysis-dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🔗 View on GitHub
+          </a>
+        </div>
+
+
+        <div class="project-card">
+          <h3>Uber Analysis Dashboard 1 – Power BI</h3>
+          <p>
+            Developed an end-to-end Uber analytics dashboard using Power BI and SQL to
+            track KPIs such as total trips, revenue, average distance, cancellation
+            rates, and driver ratings. Enabled drill-down analysis by city, date, and
+            vehicle type, improving decision-making and operational visibility.
+          </p>
+          <a
+            href="https://github.com/NaveenVayilapalli007/uber-powerbi-analysis-dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🔗 View on GitHub
+          </a>
+        </div>
+
+
+
+        <div class="project-card">
+          <h3>Uber Analysis Dashboard 2 – Power BI</h3>
+          <p>
+            Developed an end-to-end Uber analytics dashboard using Power BI and SQL to
+            track KPIs such as total trips, revenue, average distance, cancellation
+            rates, and driver ratings. Enabled drill-down analysis by city, date, and
+            vehicle type, improving decision-making and operational visibility.
+          </p>
+          <a
+            href="https://github.com/NaveenVayilapalli007/uber-powerbi-analysis-dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🔗 View on GitHub
+          </a>
+        </div> -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section fade-in">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Let’s collaborate or discuss exciting opportunities. Feel free to reach out!</p>
+      <a href="mailto:naveenvayilapalli007@gmail.com" class="btn">📧 Email Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Naveen Vayilapalli | Built with ❤️ using GitHub Pages</p>
+  </footer>
+</body>
+</html>
