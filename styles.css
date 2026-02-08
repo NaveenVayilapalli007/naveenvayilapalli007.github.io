@@ -1,23 +1,48 @@
+/* =========================
+   THEME VARIABLES
+========================= */
+
 :root {
   --primary: #2563eb;
+
   --background: #f8fafc;
-  --text: #000000;
-  --muted: #475569;
+  --text: black;
+  --muted: black;
+
   --card-bg: #ffffff;
-  --footer-bg: #0f172a;
+  --footer-bg:black;
+
+  /* Visual refinement tokens */
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* Dark theme */
+/* Dark Theme */
+
 [data-theme="dark"] {
-  --background: #0f172a;
-  --text: #ffffff;
-  --muted: #94a3b8;
-  --card-bg: #1e293b;
-  --footer-bg: #000;
   --primary: #60a5fa;
+
+  --background: #020617;
+  --text: white;
+  --muted: white;
+
+  --card-bg: #111827;
+  --footer-bg: #000000;
+
+  --border: rgba(148, 163, 184, 0.15);
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: "Poppins", system-ui, sans-serif;
@@ -27,40 +52,71 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-/* Navbar */
+
+/* =========================
+   DATETIME BAR
+========================= */
+
+#datetime-bar {
+  width: 100%;
+  background: var(--card-bg);
+  color: var(--muted);
+  text-align: center;
+  padding: 0.4rem 0;
+  font-size: 0.99rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
   background: var(--card-bg);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
 }
+
 .logo a {
   text-decoration: none;
   color: var(--text);
   font-weight: 700;
   font-size: 1.5rem;
 }
-.logo span { color: var(--primary); }
+
+.logo span {
+  color: var(--primary);
+}
+
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.2rem;
   align-items: center;
-  
 }
+
 .nav-links a {
   text-decoration: none;
   color: var(--muted);
   transition: 0.2s;
 }
-.nav-links a:hover { color: var(--primary); }
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
 #theme-toggle {
   background: none;
   border: none;
@@ -68,22 +124,49 @@ body {
   font-size: 1.2rem;
 }
 
-/* Hero */
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
-  background: linear-gradient(135deg, var(--primary), #1e3a8a);
+  background: linear-gradient(
+    135deg,
+    #2563eb 0%,
+    #4f46e5 50%,
+    #1e3a8a 100%
+  );
   color: white;
   text-align: center;
   padding: 6rem 2rem;
 }
-.hero h2 { font-size: 2.4rem; margin-bottom: 1rem; }
-.hero span { color: #c7d2fe; }
-.hero p { font-size: 1.1rem; margin-bottom: 2rem; }
-.hero-buttons .btn, .btn-outline {
+
+.hero h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.hero span {
+  color: #c7d2fe;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons .btn,
+.hero-buttons .btn-outline {
   margin: 0.25rem;
 }
 
-/* Buttons */
-.btn, .btn-outline {
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+.btn-outline {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -91,49 +174,84 @@ body {
   font-weight: 500;
   transition: 0.3s;
 }
+
 .btn {
   background: white;
   color: var(--primary);
 }
-.btn:hover { background: #f1f5f9; }
+
+.btn:hover {
+  background: #f1f5f9;
+}
+
 .btn-outline {
   border: 1px solid white;
   color: white;
 }
+
 .btn-outline:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Sections */
+
+/* =========================
+   SECTIONS
+========================= */
+
 .section {
   padding: 4rem 2rem;
   text-align: center;
+  background: var(--background);
 }
+
+.section:nth-child(even) {
+  background: var(--card-bg);
+}
+
 .section h2 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
+  color: var(--text);
 }
-.section p { max-width: 800px; margin: 0 auto 2rem auto; color: var(--muted); }
 
-/* Skills */
+.section p {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: var(--muted);
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
 }
+
 .skill-card {
   background: var(--card-bg);
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
   transition: transform 0.2s;
 }
-.skill-card:hover { transform: translateY(-5px); }
 
-/* Projects */
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 projects per row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -142,20 +260,36 @@ body {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
   text-align: left;
   transition: transform 0.3s;
 }
-.project-card:hover { transform: scale(1.02); }
-.project-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
 .project-card a {
   text-decoration: none;
   color: var(--primary);
   font-weight: 500;
 }
-.project-card a:hover { text-decoration: underline; }
 
-/* Footer */
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer {
   background: var(--footer-bg);
   color: white;
@@ -164,18 +298,27 @@ body {
   font-size: 0.9rem;
 }
 
-/* Animations */
+
+/* =========================
+   ANIMATIONS
+========================= */
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Responsive */
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 /* Tablets */
 @media (max-width: 1024px) {
   .project-grid {
